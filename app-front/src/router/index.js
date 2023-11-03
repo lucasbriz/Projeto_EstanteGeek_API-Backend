@@ -1,5 +1,5 @@
 import { createRouter, createWebHistory } from 'vue-router'
-import HomeView from '../views/HelloWorld.vue'
+import HomeView from '../components/HelloWorld.vue'
 import CadastrarEdicao from '../pages/CadastrarEdicao'
 
 const routes = [
@@ -11,7 +11,7 @@ const routes = [
   {
     path: '/cadastrar-edicao',
     name: 'cadastrar edição',
-    component: CadastrarEdicao,
+    component: CadastrarEdicao
   },
   {
     path: '/about',

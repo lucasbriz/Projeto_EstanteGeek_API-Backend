@@ -13,7 +13,7 @@
                         <router-link class="nav-link" to="/">Home</router-link>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#">Cadastrar Edição</a>
+                        <router-link class="nav-link" to="/cadastrar-edicao">Cadastrar Edição</router-link>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="#">Biblioteca</a>
