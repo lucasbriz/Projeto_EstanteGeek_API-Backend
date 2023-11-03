@@ -1,11 +1,17 @@
 import { createRouter, createWebHistory } from 'vue-router'
-import HomeView from '../views/HomeView.vue'
+import HomeView from '../views/HelloWorld.vue'
+import CadastrarEdicao from '../pages/CadastrarEdicao'
 
 const routes = [
   {
     path: '/',
     name: 'home',
     component: HomeView
+  },
+  {
+    path: '/cadastrar-edicao',
+    name: 'cadastrar edição',
+    component: CadastrarEdicao,
   },
   {
     path: '/about',
