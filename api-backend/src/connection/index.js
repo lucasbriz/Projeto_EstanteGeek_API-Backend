@@ -3,10 +3,10 @@ const mysql = require('mysql2/promise');
 const connection = mysql.createPool(
     {
         host: 'localhost',
-        port: 3308,
-        database: 'estante_geek',
+        port: 3306,
+        database: 'sakila',
         user: 'root',
-        password: 'root',
+        password: '4268',
     }
 );
 
