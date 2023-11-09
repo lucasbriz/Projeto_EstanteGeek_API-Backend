@@ -5,4 +5,9 @@ const getAllActors = async () => {
     return query;
 };
 
-module.exports = {getAllActors}
+const getActorsById = async (id) => {
+    const [query] = await connection.execute(`SELECT * FROM sakila.actor WHERE actor_id = ?`, [id]);
+    return query;
+}
+
+module.exports = {getAllActors, getActorsById}
