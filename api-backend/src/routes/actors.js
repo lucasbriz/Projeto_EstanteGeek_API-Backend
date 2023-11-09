@@ -17,4 +17,10 @@ router.get('/:id', async (req, res) => {
     return res.status(200).json(query);
 });
 
+router.post('/', async (req, res) => {
+    const { first_name, last_name} = req.body;
+    const query = await queries.createActor(first_name, last_name);
+        return res.status(201).json(query);
+});
+
 module.exports = router;

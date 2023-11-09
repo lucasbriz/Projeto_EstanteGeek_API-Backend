@@ -10,4 +10,9 @@ const getActorsById = async (id) => {
     return query;
 }
 
-module.exports = {getAllActors, getActorsById}
+const createActor = async (first_name, last_name) => {
+    const [query] = await connection.execute(`INSERT INTO sakila.actor (first_name, last_name) VALUES (?, ?)`, [first_name, last_name]);
+    return query;
+}
+
+module.exports = {getAllActors, getActorsById, createActor}
