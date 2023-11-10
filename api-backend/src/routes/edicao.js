@@ -4,8 +4,8 @@ const queries = require('../editionQueries');
 const router = Router();
 
 router.post('/', async (req, res) => {
-    const {titulo, autor, selo, ano, num_paginas, condicao_novo} = req.body;
-    const query = await queries.createEdition(titulo, autor, selo, ano, num_paginas, condicao_novo);
+    const {titulo, autor, editora, ano, num_paginas, condicao_novo} = req.body;
+    const query = await queries.createEdition(titulo, autor, editora, ano, num_paginas, condicao_novo);
         return res.status(201).json(query);
 });
 
@@ -24,8 +24,8 @@ router.get('/:id', async (req, res) => {
 });
 
 router.put('/', async (req, res) => {
-    const {id, titulo, autor, selo, ano, num_paginas, condicao_novo} = req.body;
-    const query = await queries.updateEdition(id, titulo, autor, selo, ano, num_paginas, condicao_novo);
+    const {id, titulo, autor, editora, ano, num_paginas, condicao_novo} = req.body;
+    const query = await queries.updateEdition(id, titulo, autor, editora, ano, num_paginas, condicao_novo);
     if (query === null) {
         return res.status(400).json({message: 'Edição não encontrada.'});
     }
