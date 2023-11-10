@@ -10,4 +10,9 @@ const getAllProfiles = async () => {
     return query;
 }
 
-module.exports = {createProfile, getAllProfiles};
+const getProfileById = async (id) => {
+    const [query] = await connection.execute(`SELECT * FROM estante_geek.perfil WHERE id = ?`, [id]);
+    return query;
+}
+
+module.exports = {createProfile, getAllProfiles, getProfileById};
