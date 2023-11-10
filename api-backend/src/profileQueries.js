@@ -15,4 +15,15 @@ const getProfileById = async (id) => {
     return query;
 }
 
-module.exports = {createProfile, getAllProfiles, getProfileById};
+const updateProfile = async (id, nome, nome_usuario, email, senha) => {
+    const item = await getProfileById(id);
+    if (item.length === 0) {
+        return null;
+    }
+    const [query] = await connection.execute(`UPDATE estante_geek.perfil 
+        SET nome = ?, nome_usuario = ?, email = ?, senha = ? WHERE id = ?;`,
+    [nome, nome_usuario, email, senha, id]);
+    return query;
+}
+
+module.exports = {createProfile, getAllProfiles, getProfileById, updateProfile};
