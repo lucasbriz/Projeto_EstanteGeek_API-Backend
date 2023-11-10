@@ -5,4 +5,9 @@ const createProfile = async (nome, nome_usuario, email, senha) => {
     return query;
 }
 
-module.exports = {createProfile};
+const getAllProfiles = async () => {
+    const [query] = await connection.execute('SELECT * FROM estante_geek.perfil');
+    return query;
+}
+
+module.exports = {createProfile, getAllProfiles};

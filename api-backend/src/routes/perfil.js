@@ -9,4 +9,9 @@ router.post('/', async (req, res) => {
         return res.status(201).json(query);
 });
 
+router.get('/', async (req, res) => {
+    const query = await queries.getAllProfiles();
+    return res.status(200).json(query);
+});
+
 module.exports = router;
