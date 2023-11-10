@@ -20,4 +20,14 @@ const createEdition = async (titulo, autor, selo, ano, num_paginas, condicao_nov
     return query;
 }
 
-module.exports = {getAllActors, getActorsById, createActor, createEdition}
+const getAllEditions = async () => {
+    const [query] = await connection.execute('SELECT * FROM estante_geek.edicao');
+    return query;
+}
+
+const getEditionById = async (id) => {
+    const [query] = await connection.execute(`SELECT * FROM estante_geek.edicao WHERE id = ?`, [id]);
+    return query;
+}
+
+module.exports = {getAllActors, getActorsById, createActor, createEdition, getAllEditions, getEditionById};
