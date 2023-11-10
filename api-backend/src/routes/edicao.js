@@ -1,5 +1,5 @@
 const { Router } = require('express');
-const queries = require('../queries');
+const queries = require('../editionQueries');
 
 const router = Router();
 
