@@ -32,4 +32,14 @@ router.put('/', async (req, res) => {
     return res.status(200).json({message: 'Perfil alterado com sucesso'});
 });
 
+router.delete('/:id', async (req, res) => {
+    const {id} = req.params;
+    const query = await queries.deleteProfile(id);
+    if (query === null) {
+        return res.status(400).json({message: 'Perfil não encontrado'});
+    }
+    return res.status(200).json({message: 'Perfil deletado com sucesso'});
+});
+
+
 module.exports = router;

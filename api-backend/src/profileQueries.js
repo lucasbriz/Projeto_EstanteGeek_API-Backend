@@ -26,4 +26,13 @@ const updateProfile = async (id, nome, nome_usuario, email, senha) => {
     return query;
 }
 
-module.exports = {createProfile, getAllProfiles, getProfileById, updateProfile};
+const deleteProfile = async (id) => {
+    const item = await getProfileById(id);
+    if (item.length === 0) {
+        return null;
+    }
+    const [query] = await connection.execute(`DELETE FROM estante_geek.perfil WHERE id = ?;`, [id]);
+    return query;
+}
+
+module.exports = {createProfile, getAllProfiles, getProfileById, updateProfile, deleteProfile};
