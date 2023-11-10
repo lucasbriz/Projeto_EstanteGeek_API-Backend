@@ -25,12 +25,20 @@ router.get('/:id', async (req, res) => {
 
 router.put('/', async (req, res) => {
     const {id, titulo, autor, selo, ano, num_paginas, condicao_novo} = req.body;
-    const query =  await queries.updateEdition(id, titulo, autor, selo, ano, num_paginas, condicao_novo);
+    const query = await queries.updateEdition(id, titulo, autor, selo, ano, num_paginas, condicao_novo);
     if (query === null) {
         return res.status(400).json({message: 'Edição não encontrada.'});
     }
     return res.status(200).json({message: 'Edição alterada com sucesso'});
 });
 
+router.delete('/:id', async (req, res) => {
+    const {id} = req.params;
+    const query = await queries.deleteEdition(id);
+    if (query === null) {
+        return res.status(400).json({message: 'Edição não encontrada'});
+    }
+    return res.status(200).json({message: 'Edição deletada com sucesso'});
+});
 
 module.exports = router;

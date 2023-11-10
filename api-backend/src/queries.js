@@ -42,4 +42,13 @@ const updateEdition = async (id, titulo, autor, selo, ano, num_paginas, condicao
     return query;
 }
 
-module.exports = {getAllActors, getActorsById, createActor, createEdition, getAllEditions, getEditionById, updateEdition};
+const deleteEdition = async (id) => {
+    const item = await getEditionById(id);
+    if (item.length === 0) {
+        return null;
+    }
+    const [query] = await connection.execute(`DELETE FROM estante_geek.edicao WHERE id = ?;`, [id]);
+    return query;
+}
+
+module.exports = {getAllActors, getActorsById, createActor, createEdition, getAllEditions, getEditionById, updateEdition, deleteEdition};
