@@ -30,4 +30,16 @@ const getEditionById = async (id) => {
     return query;
 }
 
-module.exports = {getAllActors, getActorsById, createActor, createEdition, getAllEditions, getEditionById};
+const updateEdition = async (id, titulo, autor, selo, ano, num_paginas, condicao_novo) => {
+    const item = await getEditionById(id);
+    if (item.length === 0) {
+        return null;
+    }
+    const [query] = await connection.execute(`UPDATE estante_geek.edicao 
+        SET titulo = ?, autor = ?, selo = ?, ano = ?, num_paginas = ?, condicao_novo = ?
+        WHERE id = ?;`,
+    [titulo, autor, selo, ano, num_paginas, condicao_novo, id]);
+    return query;
+}
+
+module.exports = {getAllActors, getActorsById, createActor, createEdition, getAllEditions, getEditionById, updateEdition};
