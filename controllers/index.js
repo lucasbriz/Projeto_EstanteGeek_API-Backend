@@ -1,5 +1,5 @@
-const edicoesController = require('./edicoesController')
+const editionsController = require('./editionsController')
 
 module.exports = {
-    edicoes: edicoesController,
+    editions: editionsController,
 }

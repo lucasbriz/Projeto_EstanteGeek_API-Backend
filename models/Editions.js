@@ -1,5 +1,5 @@
-const Edicao = (sequelize, DataTypes) => {
-    return sequelize.define('Edicao', {
+const Edition = (sequelize, DataTypes) => {
+    return sequelize.define('Edition', {
         titulo: DataTypes.STRING,
         autor: DataTypes.STRING,
         editora: DataTypes.STRING,
@@ -7,4 +7,4 @@ const Edicao = (sequelize, DataTypes) => {
     });
 };
 
-module.exports = Edicao;
+module.exports = Edition;
