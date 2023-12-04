@@ -5,12 +5,12 @@ const router = Router();
 
 router.get('/', async (req, res) => {
     const editions = await Edition.findAll();
-    res.status(200).json({message: 'ok!'});
+    res.status(200).json(editions);
 });
 
 router.get('/:id', async (req, res) => {
-    const editions = await Edition.findById(req.params.id);
-    res.status(200).json({message: 'ok!'});
+    const editions = await Edition.findByPk(req.params.id);
+    res.status(200).json(editions);
 });
 
 router.post('/', async (req, res) => {
