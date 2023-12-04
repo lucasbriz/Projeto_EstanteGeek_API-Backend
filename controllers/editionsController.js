@@ -19,4 +19,14 @@ router.post('/', async (req, res) => {
     res.status(200).json({message: 'Edição cadastrada com sucesso!'});
 });
 
+router.delete('/:id', async(req, res) => {
+    await Edition.destroy({
+        where: {
+            id: req.params.id,
+        },
+    });
+
+    res.status(200).json({message: 'Edição excluída com sucesso!'});
+});
+
 module.exports = router;
