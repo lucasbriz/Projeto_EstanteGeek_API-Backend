@@ -19,6 +19,19 @@ router.post('/', async (req, res) => {
     res.status(200).json({message: 'Edição cadastrada com sucesso!'});
 });
 
+router.put('/:id', async(req, res) => {
+    const {titulo, autor, editora, ano} = req.body; 
+
+    await Edition.update(
+        {titulo, autor, editora, ano},
+        {
+            where: {id: req.params.id},
+        }
+    );
+
+    res.status(200).json({message: 'Edição atualizada com sucesso!'});
+});
+
 router.delete('/:id', async(req, res) => {
     await Edition.destroy({
         where: {
