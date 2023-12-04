@@ -14,16 +14,16 @@ router.get('/:id', async (req, res) => {
 });
 
 router.post('/', async (req, res) => {
-    const {titulo, autor, editora, ano} = req.body;
-    const newEdition = Edition.create({titulo, autor, editora, ano});
+    const {titulo, autor, editora, ano, num_paginas} = req.body;
+    const newEdition = Edition.create({titulo, autor, editora, ano, num_paginas});
     res.status(200).json({message: 'Edição cadastrada com sucesso!'});
 });
 
 router.put('/:id', async(req, res) => {
-    const {titulo, autor, editora, ano} = req.body; 
+    const {titulo, autor, editora, ano, num_paginas} = req.body; 
 
     await Edition.update(
-        {titulo, autor, editora, ano},
+        {titulo, autor, editora, ano, num_paginas},
         {
             where: {id: req.params.id},
         }

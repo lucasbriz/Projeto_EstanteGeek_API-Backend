@@ -26,6 +26,10 @@ module.exports = {
         type: Sequelize.INTEGER,
         allowNull: false,
       },
+      num_paginas: {
+        type: Sequelize.INTEGER,
+        allowNull: false,
+      },
       createdAt: {
         type: Sequelize.DATE,
         allowNull: false,
