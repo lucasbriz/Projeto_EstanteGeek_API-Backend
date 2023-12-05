@@ -1,24 +1,24 @@
-- Inicializar o projeto ao baixar o repo:
+- Inicializar o projeto ao baixar o repositório:
 ```
 npm install
 ```
 
-- Instalar o sequelize:
+- Após criar um model, para criar sua respectiva migration:
 ```
-npm install --save sequelize
-```
-
-- Instalar o sequelize-cli:
-```
-npm install sequelize-cli -D
+npx sequelize migration:generate --name create-[nome do model a ser criado no plural]
 ```
 
-- Instalar o DB:
+- Criar o database/schema no banco:
 ```
-npm install --save mysql2
+npx sequelize db:create
 ```
 
-- Instalar o nodemon:
+- Criar as tabelas no banco:
 ```
-npm install nodemon -D
+npx sequelize db:migrate
+```
+
+- Caso haja necessidade de reinstalar alguma dependência:
+```
+npm i sequelize mysql2 express nodemon body-parser sequelize-cli
 ```
