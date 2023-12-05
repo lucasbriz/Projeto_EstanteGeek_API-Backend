@@ -20,5 +20,5 @@ npx sequelize db:migrate
 
 - Caso haja necessidade de reinstalar alguma dependência:
 ```
-npm i sequelize mysql2 express nodemon body-parser
+npm i sequelize mysql2 express nodemon body-parser sequelize-cli
 ```
