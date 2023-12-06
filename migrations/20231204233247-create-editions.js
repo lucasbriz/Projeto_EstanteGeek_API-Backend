@@ -26,8 +26,16 @@ module.exports = {
         type: Sequelize.INTEGER,
         allowNull: false,
       },
-      num_paginas: {
+      status: {
+        type: Sequelize.BOOLEAN,
+        allowNull: false,
+      },
+      nota: {
         type: Sequelize.INTEGER,
+        allowNull: false,
+      },
+      comentario: {
+        type: Sequelize.STRING,
         allowNull: false,
       },
       createdAt: {
