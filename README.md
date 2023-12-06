@@ -22,3 +22,6 @@ npx sequelize db:migrate
 ```
 npm i sequelize mysql2 express nodemon body-parser sequelize-cli
 ```
+
+- Resolução de erro de conexão com o azure:
+https://learn.microsoft.com/en-us/azure/mysql/flexible-server/how-to-connect-tls-ssl
