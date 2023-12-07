@@ -20,7 +20,7 @@ npx sequelize db:migrate
 
 - Caso haja necessidade de reinstalar alguma dependência:
 ```
-npm i sequelize mysql2 express nodemon body-parser sequelize-cli
+npm i sequelize mysql2 express nodemon body-parser sequelize-cli cors
 ```
 
 - Resolução de erro de conexão com o azure:
