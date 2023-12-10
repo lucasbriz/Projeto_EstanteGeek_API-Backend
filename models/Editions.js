@@ -4,7 +4,7 @@ const Edition = (sequelize, DataTypes) => {
         autor: DataTypes.STRING,
         editora: DataTypes.STRING,
         ano: DataTypes.INTEGER,
-        status: DataTypes.BOOLEAN,
+        status: DataTypes.STRING,
         nota: DataTypes.INTEGER,
         comentario: DataTypes.STRING
     });
